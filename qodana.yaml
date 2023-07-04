@@ -1,3 +1,6 @@
 version: "1.0"
-linter: jetbrains/qodana-jvm:2023.1-eap
+linter: registry.jetbrains.team/p/sa/containers/qodana-jvm:2023.2-nightly
 projectJDK: 17
+bootstrap: |
+  mkdir -p /data/coverage
+  mv .qodana/coverage-data/output.ic /data/coverage
