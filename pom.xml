@@ -102,6 +102,8 @@
         <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
         <arguments />
         <gpg.keyname>67893CC4</gpg.keyname>
+        <intellij.coverage.agent.version>1.0.725</intellij.coverage.agent.version>
+        <intellij.agent.options>${project.basedir}/.qodana/coverage-data/output.ic,true,true,true,false</intellij.agent.options>
     </properties>
 
     <dependencies>
@@ -115,6 +117,12 @@
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-library</artifactId>
             <version>${hamcrestVersion}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains.intellij.deps</groupId>
+            <artifactId>intellij-coverage-agent</artifactId>
+            <version>${intellij.coverage.agent.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -265,6 +273,9 @@
                     <includes>
                         <include>org/junit/tests/AllTests.java</include>
                     </includes>
+                    <argLine>
+                        -javaagent:${settings.localRepository}/org/jetbrains/intellij/deps/intellij-coverage-agent/${intellij.coverage.agent.version}/intellij-coverage-agent-${intellij.coverage.agent.version}.jar=${intellij.agent.options}
+                    </argLine>
                     <useSystemClassLoader>true</useSystemClassLoader>
                     <enableAssertions>false</enableAssertions>
                 </configuration>
