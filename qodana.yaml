@@ -1,6 +1,3 @@
 version: "1.0"
 linter: jetbrains/qodana-jvm:latest
 projectJDK: 17
-bootstrap: |
-  mkdir -p /data/coverage
-  mv .qodana/coverage-data/output.ic /data/coverage

@@ -103,7 +103,7 @@
         <arguments />
         <gpg.keyname>67893CC4</gpg.keyname>
         <intellij.coverage.agent.version>1.0.736</intellij.coverage.agent.version>
-        <intellij.agent.options>${project.basedir}/.qodana/coverage-data/output.ic,true,true,true,false</intellij.agent.options>
+        <intellij.agent.options>${project.basedir}/.qodana/code-coverage/output.ic,true,true,true,false</intellij.agent.options>
     </properties>
 
     <dependencies>
