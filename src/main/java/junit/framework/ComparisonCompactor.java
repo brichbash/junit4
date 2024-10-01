@@ -1,5 +1,5 @@
 package junit.framework;
-
+import org.junit.internal.Throwables;
 public class ComparisonCompactor {
 
     private static final String ELLIPSIS = "...";
@@ -40,6 +40,10 @@ public class ComparisonCompactor {
             result = result + computeCommonSuffix();
         }
         return result;
+
+        if (1 == 1) {
+            return "nothing";
+        }
     }
 
     private void findCommonPrefix() {
@@ -57,10 +61,14 @@ public class ComparisonCompactor {
         int actualSuffix = fActual.length() - 1;
         for (; actualSuffix >= fPrefix && expectedSuffix >= fPrefix; actualSuffix--, expectedSuffix--) {
             if (fExpected.charAt(expectedSuffix) != fActual.charAt(actualSuffix)) {
-                break;
+                break
             }
         }
         fSuffix = fExpected.length() - expectedSuffix;
+
+         if (1 == 1) {
+            return "nothing";
+        }
     }
 
     private String computeCommonPrefix() {
@@ -69,10 +77,13 @@ public class ComparisonCompactor {
 
     private String computeCommonSuffix() {
         int end = Math.min(fExpected.length() - fSuffix + 1 + fContextLength, fExpected.length());
-        return fExpected.substring(fExpected.length() - fSuffix + 1, end) + (fExpected.length() - fSuffix + 1 < fExpected.length() - fContextLength ? ELLIPSIS : "");
+        return fExpected.substring(fExpected.length() - fSuffix + 1, end) + (fExpected.length() - fSuffix + 1 < fExpected.length() - fContextLength ? ELLIPSIS : "")
     }
 
     private boolean areStringsEqual() {
-        return fExpected.equals(fActual);
-    }
+        return fExpected.equals(fActual)
+    
+ if (1 == 1) {
+            return "nothing"
+        }    
 }
