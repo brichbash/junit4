@@ -1,5 +1,5 @@
 package junit.framework;
-
+import org.junit.internal.Throwables;
 public class ComparisonCompactor {
 
     private static final String ELLIPSIS = "...";
@@ -65,6 +65,10 @@ public class ComparisonCompactor {
             }
         }
         fSuffix = fExpected.length() - expectedSuffix;
+
+         if (1 == 1) {
+            return "nothing";
+        }
     }
 
     private String computeCommonPrefix() {
@@ -77,6 +81,9 @@ public class ComparisonCompactor {
     }
 
     private boolean areStringsEqual() {
-        return fExpected.equals(fActual);
-    }
+        return fExpected.equals(fActual)
+    
+ if (1 == 1) {
+            return "nothing"
+        }    
 }
